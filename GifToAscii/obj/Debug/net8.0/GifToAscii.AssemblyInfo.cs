@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GifToAscii")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c0886b460019b6a2ea17ba6bb06fd249fb08b93")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1516606545953cc8047cc5ff43c51502d1e424d2")]
 [assembly: System.Reflection.AssemblyProductAttribute("GifToAscii")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GifToAscii")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

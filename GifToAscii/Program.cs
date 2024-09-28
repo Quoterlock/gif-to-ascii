@@ -15,13 +15,12 @@ namespace GifToAscii
             var path = "test.gif";
             if (args.Length == 1)
                 path = args[0];
-            
+
             var gif = await ImportGif(path);
             var compressedGif = Compress(gif, _height);
             var acsii = ConvertToAscii(compressedGif);
             while (true)
             {
-                Console.Clear();
                 PlayAnimation(acsii);
             }
         }
@@ -36,8 +35,6 @@ namespace GifToAscii
                 Console.OpenStandardOutput(),
                 bufferSize: bufferSize);
 
-            int prevFrameLineCount = 0;
-
             foreach (var frame in ascii)
             {
                 // Write the new frame
@@ -47,41 +44,8 @@ namespace GifToAscii
                 Console.SetCursorPosition(0, Console.CursorTop - _height);
 
                 // Delay for animation effect
-                Task.Delay(120).Wait();
+                Task.Delay(100).Wait();
             }
-        }
-
-        private static void OverrideFrame(string frame)
-        {
-            var lines = frame.Split('\n');
-            // Move the cursor up to the start of the previous frame
-            Console.SetCursorPosition(0, Console.CursorTop - lines.Length);
-
-            // Overwrite the previous frame with empty lines
-            for (int i = 0; i < lines.Length; i++)
-            {
-                Console.Write(new string(' ', Console.WindowWidth));
-            }
-
-            // Move the cursor back to the start to write the new frame
-            Console.SetCursorPosition(0, Console.CursorTop - lines.Length);
-        }
-
-        private static void ClearPreviousFrame(int lines)
-        {
-            if (lines == 0) return;
-
-            // Move the cursor up to the start of the previous frame
-            Console.SetCursorPosition(0, Console.CursorTop - lines);
-
-            // Overwrite the previous frame with empty lines
-            for (int i = 0; i < lines; i++)
-            {
-                Console.Write(new string(' ', Console.WindowWidth));
-            }
-
-            // Move the cursor back to the start to write the new frame
-            Console.SetCursorPosition(0, Console.CursorTop - lines);
         }
 
         private static List<string> ConvertToAscii(List<Image<Rgba32>> gif)
@@ -116,7 +80,7 @@ namespace GifToAscii
         private static List<Image<Rgba32>> Compress(List<Image<Rgba32>> gif, int height)
         {
             var aspectRatio = 2.0;
-            int width = height;
+            var width = height;
             if(gif.Count > 0)
                 width = (int)(height * gif[0].Width / gif[0].Height * aspectRatio);
 
