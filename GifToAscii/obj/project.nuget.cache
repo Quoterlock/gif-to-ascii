@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "lT4yeDg/MI1CsPS18lCe7pw+IboGfsqgSYVJweW8OfIS/FJ26AID9QcZwEhGGiEO48S8RIVQwRJcQaWYoorYSQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\source\\git-repos\\gif-to-ascii\\GifToAscii\\GifToAscii.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\sixlabors.imagesharp\\3.1.5\\sixlabors.imagesharp.3.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}
